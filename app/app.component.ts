@@ -1,7 +1,14 @@
 import { Component } from '@angular/core';
+import { PeopleService } from './people.service';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    template: `
+        <h1> {{title}} </h1>
+        <people-list>
+    `,
+    providers: [PeopleService]
 })
-export class AppComponent { }
+export class AppComponent { 
+    title: string = 'Star Wars Pplz';
+}
