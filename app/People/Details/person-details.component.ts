@@ -11,7 +11,7 @@ import {Component} from '@angular/core';
 
 export class PersonDetailsComponent {
     person: Person;
-    professions: string[];
+    professions: string[] = ['jedi', 'bounty hunter', 'princess', 'sith lord'];
     sub: any;
 
     constructor(private peopleService: PeopleService,
@@ -30,7 +30,6 @@ export class PersonDetailsComponent {
     }
 
     ngOnInit() {
-        professions: string[] = ['jedi', 'bounty hunter', 'princess', 'sith lord'];
         this.sub = this.route.params.subscribe(params => {
             let id = Number.parseInt(params['id']);
             this.person = this.peopleService.get(id);
