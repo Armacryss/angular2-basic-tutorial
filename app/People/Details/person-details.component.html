@@ -5,7 +5,7 @@
         {{person.name}} weights {{person.weight}} and is {{person.height}} tall.
     </p>
 </section>
-<section>
+<section *ngIf="person">
     <form (ngSubmit)="savePersonDetails()" #personForm="ngForm">
         <div>
             <label for="name">Name: </label>

@@ -32,7 +32,8 @@ export class PersonDetailsComponent {
     ngOnInit() {
         this.sub = this.route.params.subscribe(params => {
             let id = Number.parseInt(params['id']);
-            this.person = this.peopleService.get(id);
+            console.log('getting person with id: ', id);
+            this.peopleService.get(id).subscribe(p => this.person = p);
         });
     }
 
